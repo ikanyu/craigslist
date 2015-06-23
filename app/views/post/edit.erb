@@ -1,0 +1,18 @@
+<form action="/post/create" method="POST">
+  <input type="hidden" name="id" value="<%= @post.id %>">
+Title:<br>
+<input type="text" name="title" value="<%= @post.title %>">
+<br>
+Description:<br>
+<input type="text" name="description" value="<%= @post.description %>"><br>
+Email:<br>
+<input type="text" name="email" value="<%= @post.email %>"><br>
+Price:<br>
+<input type="text" name="price" value="<%= @post.price %>"><br>
+Category:<br><br>
+<% @categories.each do |category| %>
+<input type="radio" name="category_id" value="<%= category.id %>">  <%= category.name %><br>
+<% end %>
+<input type="submit" value="Submit">
+</form>
+
